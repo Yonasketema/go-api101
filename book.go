@@ -31,6 +31,8 @@ func getAllBooks(w http.ResponseWriter, r *http.Request) {
 
 	}
 
+	defer rows.Close()
+
 	books := []*bookModel{}
 
 	for rows.Next() {
